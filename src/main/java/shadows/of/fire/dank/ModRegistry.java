@@ -16,9 +16,8 @@ public class ModRegistry {
 	public static BlockModCrop cropBone;
 	
 	public static void init() {
-		seedBone = new ItemModSeed("seedBone", "seedBone", ModRegistry.cropBone);
-		cropBone = new BlockModCrop("cropBone", "cropBone", ModRegistry.seedBone, Items.BONE);
-
+		cropBone = new BlockModCrop("cropBone", ModRegistry.seedBone, Items.BONE);
+		seedBone = new ItemModSeed("seedBone", ModRegistry.cropBone);
 	}
 		
 	

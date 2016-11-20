@@ -11,17 +11,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemModSeed extends ItemSeeds{
-	
-	
-	
-	
-	
-	
 	public String regname;
-	public ItemModSeed(String unlocname, String regnameIn, BlockModCrop crops) {
+	public ItemModSeed(String name, BlockModCrop crops) {
 		super(crops, Blocks.FARMLAND);
-		regname = regnameIn;
-		setUnlocalizedName(CancerPlants.MODID + "." + unlocname);
+		regname = name;
+		setUnlocalizedName(CancerPlants.MODID + "." + name);
 		setRegistryName(regname);
 		GameRegistry.register(this);
 		this.setCreativeTab(CreativeTabs.MATERIALS);

@@ -21,23 +21,23 @@ public class BlockModCrop extends BlockCrops{
 	public ItemModSeed seed;
 	public Item crop;
 	public String regname;
-	public BlockModCrop(String unlocname, String regnameIn, ItemModSeed seedIn, Item cropIn) {
+	public BlockModCrop(String name, ItemModSeed seedIn, Item cropIn) {
 		seed = seedIn;
 		crop = cropIn;
-		regname = regnameIn;
-		setUnlocalizedName(CancerPlants.MODID + "." + unlocname);
+		regname = name;
+		setUnlocalizedName(CancerPlants.MODID + "." + name);
 		setRegistryName(regname);
 		GameRegistry.register(this);
 		GameRegistry.register(new ItemBlock(this), getRegistryName());
 		
 	}
 	@Override
-	protected Item getSeed() {
-		return (ItemModSeed) seed;
+	protected ItemModSeed getSeed() {
+		return seed;
 	}
 	@Override
 	protected Item getCrop() {
-		return (Item) crop;
+		return crop;
 	}
 	@Override
 	public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state){
