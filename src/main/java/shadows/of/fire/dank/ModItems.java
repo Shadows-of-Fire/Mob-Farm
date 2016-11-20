@@ -6,25 +6,21 @@ import net.minecraft.item.Item;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ModRegistry {
+public class ModItems {
 
 	
 	//public ItemModSeed(String name, Block crops)
-	//public BlockModCrop(String name, Item seedIn, Item cropIn)
 	
 	public static ItemModSeed seedBone;
-	public static BlockModCrop cropBone;
 	
 	public static void init() {
-		cropBone = new BlockModCrop("cropBone", ModRegistry.seedBone, Items.BONE);
-		seedBone = new ItemModSeed("seedBone", ModRegistry.cropBone);
+		seedBone = new ItemModSeed("seedBone", ModBlocks.cropBone);
 	}
 		
 	
 	@SideOnly(Side.CLIENT)
 	public static void initModels(){
 		seedBone.initModel();
-		cropBone.initModel();
 	}
 	
 	

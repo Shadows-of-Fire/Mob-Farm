@@ -25,7 +25,7 @@ public class BlockModCrop extends BlockCrops{
 		seed = seedIn;
 		crop = cropIn;
 		this.getCrop();
-		this.getSeed();}
+		this.getSeed();
 		regname = name;
 		setUnlocalizedName(CancerPlants.MODID + "." + name);
 		setRegistryName(regname);
