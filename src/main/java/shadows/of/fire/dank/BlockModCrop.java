@@ -18,12 +18,14 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockModCrop extends BlockCrops{
-	public ItemModSeed seed;
+	public Item seed;
 	public Item crop;
 	public String regname;
-	public BlockModCrop(String name, ItemModSeed seedIn, Item cropIn) {
+	public BlockModCrop(String name, Item seedIn, Item cropIn) {
 		seed = seedIn;
 		crop = cropIn;
+		this.getCrop();
+		this.getSeed();}
 		regname = name;
 		setUnlocalizedName(CancerPlants.MODID + "." + name);
 		setRegistryName(regname);
@@ -32,7 +34,7 @@ public class BlockModCrop extends BlockCrops{
 		
 	}
 	@Override
-	protected ItemModSeed getSeed() {
+	protected Item getSeed() {
 		return seed;
 	}
 	@Override

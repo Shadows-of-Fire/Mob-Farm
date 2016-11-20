@@ -11,12 +11,10 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemModSeed extends ItemSeeds{
-	public String regname;
-	public ItemModSeed(String name, BlockModCrop crops) {
+	public ItemModSeed(String name, Block crops) {
 		super(crops, Blocks.FARMLAND);
-		regname = name;
 		setUnlocalizedName(CancerPlants.MODID + "." + name);
-		setRegistryName(regname);
+		setRegistryName(name);
 		GameRegistry.register(this);
 		this.setCreativeTab(CreativeTabs.MATERIALS);
 	}
@@ -24,7 +22,7 @@ public class ItemModSeed extends ItemSeeds{
 
 	@SideOnly(Side.CLIENT)
 	public void initModel(){
-		ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(regname, "inventory"));
+		ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(getRegistryName(), "inventory"));
 	}
 	
 	

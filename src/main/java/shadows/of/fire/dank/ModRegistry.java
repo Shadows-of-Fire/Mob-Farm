@@ -9,8 +9,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class ModRegistry {
 
 	
-	//public ItemModSeed(String unlocname, String regname, Block crops)
-	//public BlockModCrop(String unlocname, String regname, ItemModSeed seedIn, Item cropIn)
+	//public ItemModSeed(String name, Block crops)
+	//public BlockModCrop(String name, Item seedIn, Item cropIn)
 	
 	public static ItemModSeed seedBone;
 	public static BlockModCrop cropBone;
