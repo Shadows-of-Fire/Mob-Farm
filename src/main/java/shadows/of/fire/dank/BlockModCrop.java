@@ -20,10 +20,12 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class BlockModCrop extends BlockCrops{
 	public ItemModSeed seed;
 	public Item crop;
-	public BlockModCrop(String unlocname, String regname, ItemModSeed seedIn, Item cropIn) {
+	public String regname;
+	public BlockModCrop(String unlocname, String regnameIn, ItemModSeed seedIn, Item cropIn) {
 		seed = seedIn;
 		crop = cropIn;
-		setUnlocalizedName(CancerPlants.MODID + unlocname);
+		regname = regnameIn;
+		setUnlocalizedName(CancerPlants.MODID + "." + unlocname);
 		setRegistryName(regname);
 		GameRegistry.register(this);
 		GameRegistry.register(new ItemBlock(this), getRegistryName());
@@ -43,7 +45,7 @@ public class BlockModCrop extends BlockCrops{
 	}
 	@SideOnly(Side.CLIENT)
 	public void initModel(){
-		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName(), "inventory"));
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(regname, "inventory"));
 	}
     @Override
     public java.util.List<ItemStack> getDrops(net.minecraft.world.IBlockAccess world, BlockPos pos, IBlockState state, int fortune)

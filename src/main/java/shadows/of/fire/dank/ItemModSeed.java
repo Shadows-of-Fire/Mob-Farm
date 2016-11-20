@@ -17,10 +17,11 @@ public class ItemModSeed extends ItemSeeds{
 	
 	
 	
-	
-	public ItemModSeed(String unlocname, String regname, Block crops) {
+	public String regname;
+	public ItemModSeed(String unlocname, String regnameIn, Block crops) {
 		super(crops, Blocks.FARMLAND);
-		setUnlocalizedName(CancerPlants.MODID + "unlocname");
+		regname = regnameIn;
+		setUnlocalizedName(CancerPlants.MODID + "." + unlocname);
 		setRegistryName(regname);
 		GameRegistry.register(this);
 		this.setCreativeTab(CreativeTabs.MATERIALS);
@@ -29,7 +30,7 @@ public class ItemModSeed extends ItemSeeds{
 
 	@SideOnly(Side.CLIENT)
 	public void initModel(){
-		ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(getRegistryName(), "inventory"));
+		ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(regname, "inventory"));
 	}
 	
 	

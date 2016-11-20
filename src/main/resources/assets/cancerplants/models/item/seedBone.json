@@ -1,7 +1,7 @@
 {
   "parent": "builtin/generated",
   "textures": {
-    "layer0": "growablecells:items/itemMESeed"
+    "layer0": "cancerplants:items/seedBone"
   },
   "display": {
     "thirdperson": {
