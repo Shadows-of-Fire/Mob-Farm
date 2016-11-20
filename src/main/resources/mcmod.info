@@ -1,0 +1,16 @@
+[
+{
+  "modid": "cancerplants",
+  "name": "Random Plants",
+  "description": "Wat",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Shadows_of_Fire"],
+  "credits": "Adolf Hitler",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
