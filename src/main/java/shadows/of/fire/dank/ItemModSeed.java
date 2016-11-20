@@ -18,7 +18,7 @@ public class ItemModSeed extends ItemSeeds{
 	
 	
 	public String regname;
-	public ItemModSeed(String unlocname, String regnameIn, Block crops) {
+	public ItemModSeed(String unlocname, String regnameIn, BlockModCrop crops) {
 		super(crops, Blocks.FARMLAND);
 		regname = regnameIn;
 		setUnlocalizedName(CancerPlants.MODID + "." + unlocname);
