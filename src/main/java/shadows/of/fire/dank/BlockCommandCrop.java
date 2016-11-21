@@ -5,24 +5,26 @@ import java.util.*;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.command.ICommandManager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.*;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.*;
 
-public class BlockEntityCrop extends BlockCrops {
+public class BlockCommandCrop extends BlockCrops {
 	public Item seed;
 	public String regname;
 	public String crop;
 
 	IBlockState state;
 
-	public BlockEntityCrop(String name, Item seedIn) {
+	public BlockCommandCrop(String name, Item seedIn, String command) {
 		regname = name;
-		crop = name.substring(4);
+		crop = command;
 		setUnlocalizedName(CancerPlants.MODID + "." + name);
 		setRegistryName(regname);
 		GameRegistry.register(this);
@@ -35,11 +37,20 @@ public class BlockEntityCrop extends BlockCrops {
 		if (!world.isRemote) {
 			int age = getAge(state);
 			if (age >= getMaxAge()) {
-				ItemMonsterPlacer.spawnCreature(world, crop, pos.getX(), pos.getY(), pos.getZ());
-				
+					this.sendMessage(crop, world);
 			}
 		}
-	}
+		
+		}
+				public boolean sendMessage(String command, World world) {
+					MinecraftServer minecraftserver = world.getMinecraftServer();
+
+
+					ICommandManager icommandmanager = minecraftserver.getCommandManager();
+					return icommandmanager.executeCommand(minecraftserver, command) > 0;
+				}
+		
+	
 
 	@Override
 	protected Item getSeed() {
