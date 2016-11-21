@@ -23,7 +23,7 @@ public class ModRegistry {
 		seedGold = new ItemModSeed("seedGold", ModRegistry.cropGold);
 		cropP455 = new BlockModCrop("cropP455", ModRegistry.seedP455, Items.SKULL, "TheRealp455w0rd");
 		seedP455 = new ItemModSeed("seedP455", ModRegistry.cropP455);
-		cropBlaze = new BlockEntityCrop("cropBlaze", ModRegistry.seedBlaze, "blaze");
+		cropBlaze = new BlockEntityCrop("cropBlaze", ModRegistry.seedBlaze);
 		seedBlaze = new ItemModSeed("seedBlaze", ModRegistry.cropBlaze);
 	}
 

@@ -5,8 +5,6 @@ import java.util.*;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.monster.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.*;
 import net.minecraft.util.math.BlockPos;
@@ -22,9 +20,9 @@ public class BlockEntityCrop extends BlockCrops {
 
 	IBlockState state;
 
-	public BlockEntityCrop(String name, Item seedIn, String cropIn) {
+	public BlockEntityCrop(String name, Item seedIn) {
 		regname = name;
-		crop = cropIn;
+		crop = name.substring(4);
 		setUnlocalizedName(CancerPlants.MODID + "." + name);
 		setRegistryName(regname);
 		GameRegistry.register(this);
@@ -32,27 +30,13 @@ public class BlockEntityCrop extends BlockCrops {
 
 	}
 
-	private Entity getMob(String name, World world) {
-		switch (name) {
-		case "blaze":
-			return new EntityBlaze(world);
-		// add more mob entities here, i'll provide a ghast for example, you would
-		// pass in the String "ghast" in the constructor in ModRegistry
-		case "ghast":
-			return new EntityGhast(world);
-		}
-		return null;
-	}
-
 	@Override
 	public void onBlockHarvested(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
-		int age = getAge(state);
-		if (age >= getMaxAge()) {
-			Entity mob = getMob(crop, world);
-			mob.posX = pos.getX();
-			mob.posY = pos.getY();
-			mob.posZ = pos.getZ();
-			world.spawnEntityInWorld(mob);
+		if (!world.isRemote) {
+			int age = getAge(state);
+			if (age >= getMaxAge()) {
+				ItemMonsterPlacer.spawnCreature(world, crop, pos.getX(), pos.getY(), pos.getZ());
+			}
 		}
 	}
 
