@@ -20,7 +20,7 @@ public class BlockModCrop extends BlockCrops {
 	public String regname;
 	private String skullName;
 
-	public BlockModCrop(String name, Item seedIn, Item cropIn) {
+	public BlockModCrop(String name, Item cropIn) {
 		regname = name;
 		crop = cropIn;
 		setUnlocalizedName(CancerPlants.MODID + "." + name);
@@ -30,7 +30,7 @@ public class BlockModCrop extends BlockCrops {
 
 	}
 
-	public BlockModCrop(String name, Item seedIn, Item cropIn, String skullName) {
+	public BlockModCrop(String name, Item cropIn, String skullName) {
 		regname = name;
 		crop = cropIn;
 		setUnlocalizedName(CancerPlants.MODID + "." + name);

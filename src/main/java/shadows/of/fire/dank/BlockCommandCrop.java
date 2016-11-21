@@ -22,7 +22,7 @@ public class BlockCommandCrop extends BlockCrops {
 
 	IBlockState state;
 
-	public BlockCommandCrop(String name, Item seedIn, String command) {
+	public BlockCommandCrop(String name, String command) {
 		regname = name;
 		crop = command;
 		setUnlocalizedName(CancerPlants.MODID + "." + name);

@@ -21,7 +21,7 @@ public class BlockEntityCrop extends BlockCrops {
 
 	IBlockState state;
 
-	public BlockEntityCrop(String name, Item seedIn /*int r, int g, int b*/) {
+	public BlockEntityCrop(String name/*int r, int g, int b*/) {
 		regname = name;
 		crop = name.substring(4);
 		setUnlocalizedName(CancerPlants.MODID + "." + name);
