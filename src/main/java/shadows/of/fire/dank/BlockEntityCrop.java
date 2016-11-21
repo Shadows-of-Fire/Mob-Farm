@@ -1,5 +1,6 @@
 package shadows.of.fire.dank;
 
+import java.awt.Color;
 import java.util.*;
 
 import net.minecraft.block.BlockCrops;
@@ -20,14 +21,16 @@ public class BlockEntityCrop extends BlockCrops {
 
 	IBlockState state;
 
-	public BlockEntityCrop(String name, Item seedIn) {
+	public BlockEntityCrop(String name, Item seedIn /*int r, int g, int b*/) {
 		regname = name;
 		crop = name.substring(4);
 		setUnlocalizedName(CancerPlants.MODID + "." + name);
 		setRegistryName(regname);
 		GameRegistry.register(this);
 		GameRegistry.register(new ItemBlock(this), getRegistryName());
-
+		
+		//int endermanEggColor1 = new Color(r, g, b).getRGB(); 
+		//For if I ever try to use the automatic color system.
 	}
 
 	@Override
