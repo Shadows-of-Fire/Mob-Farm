@@ -1,8 +1,6 @@
 package shadows.of.fire.dank;
 
-import net.minecraft.entity.monster.*;
 import net.minecraft.init.Items;
-import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.*;
 
 public class ModRegistry {
@@ -19,14 +17,13 @@ public class ModRegistry {
 	public static ItemModSeed seedBlaze;
 
 	public static void init() {
-		World world = CancerPlants.proxy.getLocalWorld();
 		cropBone = new BlockModCrop("cropBone", ModRegistry.seedBone, Items.BONE);
 		seedBone = new ItemModSeed("seedBone", ModRegistry.cropBone);
 		cropGold = new BlockModCrop("cropGold", ModRegistry.seedGold, Items.GOLD_NUGGET);
 		seedGold = new ItemModSeed("seedGold", ModRegistry.cropGold);
 		cropP455 = new BlockModCrop("cropP455", ModRegistry.seedP455, Items.SKULL, "TheRealp455w0rd");
 		seedP455 = new ItemModSeed("seedP455", ModRegistry.cropP455);
-		cropBlaze = new BlockEntityCrop("cropBlaze", ModRegistry.seedBlaze, new EntityBlaze(world));
+		cropBlaze = new BlockEntityCrop("cropBlaze", ModRegistry.seedBlaze, "blaze");
 		seedBlaze = new ItemModSeed("seedBlaze", ModRegistry.cropBlaze);
 	}
 

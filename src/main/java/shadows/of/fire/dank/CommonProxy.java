@@ -1,7 +1,5 @@
 package shadows.of.fire.dank;
 
-import net.minecraft.world.World;
-import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.fml.common.event.*;
 
 public class CommonProxy {
@@ -17,10 +15,6 @@ public class CommonProxy {
 
 	public void postInit(FMLPostInitializationEvent e) {
 
-	}
-
-	public World getLocalWorld() {
-		return DimensionManager.getWorld(0);
 	}
 
 }
