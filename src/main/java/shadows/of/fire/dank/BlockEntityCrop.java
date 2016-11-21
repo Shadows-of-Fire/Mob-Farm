@@ -7,24 +7,18 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
 import net.minecraft.item.*;
-import net.minecraft.nbt.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.*;
-import net.minecraft.block.properties.*;
-
-
 
 public class BlockEntityCrop extends BlockCrops {
 	public Item seed;
 	public String regname;
 	public Entity crop;
-	public static final World world;
-	BlockPos pos = new BlockPos(pos.getX()+1, (pos.getY()+1) , pos.getZ());
+
 	IBlockState state;
 
 	public BlockEntityCrop(String name, Item seedIn, Entity cropIn) {
@@ -36,17 +30,18 @@ public class BlockEntityCrop extends BlockCrops {
 		GameRegistry.register(new ItemBlock(this), getRegistryName());
 		int age = getAge(state);
 		if (age >= getMaxAge()) {
-			
+
 		}
 
-
 	}
 
-	
-	public void onBlockHarvested(World world, BlockPos pos, IBlockState state, EntityPlayer player){
+	@Override
+	public void onBlockHarvested(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
+		crop.posX = pos.getX();
+		crop.posY = pos.getY();
+		crop.posZ = pos.getZ();
 		world.spawnEntityInWorld(crop);
 	}
-
 
 	@Override
 	protected Item getSeed() {
@@ -63,7 +58,6 @@ public class BlockEntityCrop extends BlockCrops {
 		return true;
 	}
 
-
 	@SideOnly(Side.CLIENT)
 	public void initModel() {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(regname, "inventory"));
@@ -76,7 +70,7 @@ public class BlockEntityCrop extends BlockCrops {
 		int age = getAge(state);
 
 		if (age >= getMaxAge()) {
-			
+
 		}
 
 		return ret;
