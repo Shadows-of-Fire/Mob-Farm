@@ -26,10 +26,10 @@ public class ItemModSeed extends Item implements IPlantable{
 	public final Block soil;
 	
 	public ItemModSeed(String name) {
+		regname = name;
 		Block crops = Block.getBlockFromName("cancerplants:crop" + regname.substring(4));
 		this.crops = crops;
 		this.soil = Blocks.FARMLAND;
-		regname = name;
 		setUnlocalizedName(CancerPlants.MODID + "." + name);
 		setRegistryName(name);
 		GameRegistry.register(this);

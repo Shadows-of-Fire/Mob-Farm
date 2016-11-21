@@ -1,40 +1,5 @@
 package shadows.of.fire.dank;
 
-import net.minecraft.entity.boss.EntityDragon;
-import net.minecraft.entity.boss.EntityWither;
-import net.minecraft.entity.item.EntityEnderCrystal;
-import net.minecraft.entity.monster.EntityBlaze;
-import net.minecraft.entity.monster.EntityCaveSpider;
-import net.minecraft.entity.monster.EntityCreeper;
-import net.minecraft.entity.monster.EntityEnderman;
-import net.minecraft.entity.monster.EntityEndermite;
-import net.minecraft.entity.monster.EntityGhast;
-import net.minecraft.entity.monster.EntityGiantZombie;
-import net.minecraft.entity.monster.EntityGuardian;
-import net.minecraft.entity.monster.EntityIronGolem;
-import net.minecraft.entity.monster.EntityMagmaCube;
-import net.minecraft.entity.monster.EntityPigZombie;
-import net.minecraft.entity.monster.EntityPolarBear;
-import net.minecraft.entity.monster.EntityShulker;
-import net.minecraft.entity.monster.EntitySilverfish;
-import net.minecraft.entity.monster.EntitySkeleton;
-import net.minecraft.entity.monster.EntitySlime;
-import net.minecraft.entity.monster.EntitySnowman;
-import net.minecraft.entity.monster.EntitySpider;
-import net.minecraft.entity.monster.EntityWitch;
-import net.minecraft.entity.monster.EntityZombie;
-import net.minecraft.entity.passive.EntityBat;
-import net.minecraft.entity.passive.EntityChicken;
-import net.minecraft.entity.passive.EntityCow;
-import net.minecraft.entity.passive.EntityHorse;
-import net.minecraft.entity.passive.EntityMooshroom;
-import net.minecraft.entity.passive.EntityOcelot;
-import net.minecraft.entity.passive.EntityPig;
-import net.minecraft.entity.passive.EntityRabbit;
-import net.minecraft.entity.passive.EntitySheep;
-import net.minecraft.entity.passive.EntitySquid;
-import net.minecraft.entity.passive.EntityVillager;
-import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.init.Items;
 import net.minecraftforge.fml.relauncher.*;
 
@@ -49,48 +14,73 @@ public class ModRegistry {
 	public static BlockModCrop cropP455;
 	public static ItemModSeed seedP455;
 	public static BlockEntityCrop cropCreeper;
-	public static ItemModSeed seedBlaze;
+	public static ItemModSeed seedCreeper;
 	public static BlockEntityCrop cropSkeleton;
-	public static ItemModSeed seedBlaze;
+	public static ItemModSeed seedSkeleton;
 	public static BlockEntityCrop cropSpider;
-	public static ItemModSeed seedBlaze;
+	public static ItemModSeed seedSpider;
 	public static BlockEntityCrop cropGiant;
-	public static ItemModSeed seedBlaze;
+	public static ItemModSeed seedGiant;
 	public static BlockEntityCrop cropZombie;
-	public static ItemModSeed seedBlaze;
+	public static ItemModSeed seedZombie;
 	public static BlockEntityCrop cropSlime;
-	public static ItemModSeed seedBlaze;
+	public static ItemModSeed seedSlime;
 	public static BlockEntityCrop cropGhast;
-	public static ItemModSeed seedBlaze;
+	public static ItemModSeed seedGhast;
 	public static BlockEntityCrop cropPigZombie;
-	public static ItemModSeed seedBlaze;
+	public static ItemModSeed seedPigZombie;
 	public static BlockEntityCrop cropEnderman;
-	public static ItemModSeed seedBlaze;
+	public static ItemModSeed seedEnderman;
 	public static BlockEntityCrop cropCaveSpider;
-	public static ItemModSeed seedBlaze;
+	public static ItemModSeed seedCaveSpider;
 	public static BlockEntityCrop cropSilverfish;
-	public static ItemModSeed seedBlaze;
+	public static ItemModSeed seedSilverfish;
 	public static BlockEntityCrop cropBlaze;
 	public static ItemModSeed seedBlaze;
 	public static BlockEntityCrop cropLavaSlime;
-	public static ItemModSeed seedBlaze;
+	public static ItemModSeed seedLavaSlime;
 	public static BlockEntityCrop cropEnderDragon;
-	public static ItemModSeed seedBlaze;
+	public static ItemModSeed seedEnderDragon;
 	public static BlockEntityCrop cropWitherBoss;
-	public static ItemModSeed seedBlaze;
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public static ItemModSeed seedWitherBoss;
+	public static BlockEntityCrop cropBat;
+	public static ItemModSeed seedBat;
+	public static BlockEntityCrop cropWitch;
+	public static ItemModSeed seedWitch;
+	public static BlockEntityCrop cropEndermite;
+	public static ItemModSeed seedEndermite;
+	public static BlockEntityCrop cropGuardian;
+	public static ItemModSeed seedGuardian;
+	public static BlockEntityCrop cropShulker;
+	public static ItemModSeed seedShulker;
+	public static BlockEntityCrop cropPig;
+	public static ItemModSeed seedPig;
+	public static BlockEntityCrop cropSheep;
+	public static ItemModSeed seedSheep;
+	public static BlockEntityCrop cropCow;
+	public static ItemModSeed seedCow;
+	public static BlockEntityCrop cropChicken;
+	public static ItemModSeed seedChicken;
+	public static BlockEntityCrop cropSquid;
+	public static ItemModSeed seedSquid;
+	public static BlockEntityCrop cropWolf;
+	public static ItemModSeed seedWolf;
+	public static BlockEntityCrop cropMushroomCow;
+	public static ItemModSeed seedMushroomCow;
+	public static BlockEntityCrop cropSnowMan;
+	public static ItemModSeed seedSnowMan;
+	public static BlockEntityCrop cropOzelot;
+	public static ItemModSeed seedOzelot;
+	public static BlockEntityCrop cropVillagerGolem;
+	public static ItemModSeed seedVillagerGolem;
+	public static BlockEntityCrop cropEntityHorse;
+	public static ItemModSeed seedEntityHorse;
+	public static BlockEntityCrop cropRabbit;
+	public static ItemModSeed seedRabbit;
+	public static BlockEntityCrop cropPolarBear;
+	public static ItemModSeed seedPolarBear;
+	public static BlockEntityCrop cropVillager;
+	public static ItemModSeed seedVillager;
 	
 
 	public static void init() {
@@ -100,6 +90,28 @@ public class ModRegistry {
 	//	seedGold = new ItemModSeed("seedGold", ModRegistry.cropGold);
 		cropP455 = new BlockModCrop("cropP455", Items.SKULL, "TheRealp455w0rd");
 		seedP455 = new ItemModSeed("seedP455");
+		cropCreeper = new BlockEntityCrop("cropCreeper");
+		seedCreeper = new ItemModSeed("seedCreeper");
+		cropSkeleton = new BlockEntityCrop("cropSkeleton");
+		seedSkeleton = new ItemModSeed("seedSkeleton");
+		cropSpider = new BlockEntityCrop("cropSpider");
+		seedSpider = new ItemModSeed("seedSpider");
+	//	cropGiant = new BlockEntityCrop("cropGiant");  These don't work anyhow.  Sad day.
+	//	seedGiant = new ItemModSeed("seedGiant");
+		cropZombie = new BlockEntityCrop("cropZombie");
+		seedZombie = new ItemModSeed("seedZombie");
+		cropSlime = new BlockEntityCrop("cropSlime");
+		seedSlime = new ItemModSeed("seedSlime");
+		cropGhast = new BlockEntityCrop("cropGhast");
+		seedGhast = new ItemModSeed("seedGhast");
+		cropPigZombie = new BlockEntityCrop("cropPigZombie");
+		seedPigZombie = new ItemModSeed("seedPigZombie");
+		cropEnderman = new BlockEntityCrop("cropEnderman");
+		seedEnderman = new ItemModSeed("seedEnderman");
+		cropCaveSpider = new BlockEntityCrop("cropCaveSpider");
+		seedCaveSpider = new ItemModSeed("seedCaveSpider");
+		cropSilverfish = new BlockEntityCrop("cropSilverfish");
+		seedSilverfish = new ItemModSeed("seedSilverfish");
 		cropBlaze = new BlockEntityCrop("cropBlaze");
 		seedBlaze = new ItemModSeed("seedBlaze");
 	}
@@ -109,7 +121,7 @@ public class ModRegistry {
 	//	seedBone.initModel();
 	//	seedGold.initModel();
 		seedP455.initModel();
-		seedBlaze.initModel();
+		seedCreeper.initModel();
 	}
 
 }
@@ -150,5 +162,4 @@ addMapping(EntityHorse.class, "EntityHorse", 100, 12623485, 15656192);
 addMapping(EntityRabbit.class, "Rabbit", 101, 10051392, 7555121);
 addMapping(EntityPolarBear.class, "PolarBear", 102, 15921906, 9803152);
 addMapping(EntityVillager.class, "Villager", 120, 5651507, 12422002);
-addMapping(EntityEnderCrystal.class, "EnderCrystal", 200);
 */
