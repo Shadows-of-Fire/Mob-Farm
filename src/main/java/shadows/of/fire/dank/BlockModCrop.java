@@ -1,7 +1,6 @@
 package shadows.of.fire.dank;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 import net.minecraft.block.BlockCrops;
@@ -22,11 +21,8 @@ public class BlockModCrop extends BlockCrops{
 	public Item crop;
 	public String regname;
 	public BlockModCrop(String name, Item seedIn, Item cropIn) {
-		seed = seedIn;
-		crop = cropIn;
-		this.getCrop();
-		this.getSeed();
 		regname = name;
+		crop = cropIn;
 		setUnlocalizedName(CancerPlants.MODID + "." + name);
 		setRegistryName(regname);
 		GameRegistry.register(this);
@@ -35,7 +31,7 @@ public class BlockModCrop extends BlockCrops{
 	}
 	@Override
 	protected Item getSeed() {
-		return seed;
+		return Item.getByNameOrId("cancerplants:seed" + regname.substring(4));
 	}
 	@Override
 	protected Item getCrop() {

@@ -11,8 +11,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 public class CommonProxy {
     public void preInit(FMLPreInitializationEvent e) {
         // Initialization of blocks and items typically goes here:
-    	ModItems.init();
-    	ModBlocks.init();
+    	ModRegistry.init();
     	RecipeManager.initRecipes();
     }
 

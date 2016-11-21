@@ -7,8 +7,7 @@ public class ClientProxy extends CommonProxy{
 	@Override
 	public void preInit(FMLPreInitializationEvent e) {
 		super.preInit(e);
-	ModItems.initModels();
-	ModBlocks.initModels();
+	ModRegistry.initModels();
 	}
 	
 
