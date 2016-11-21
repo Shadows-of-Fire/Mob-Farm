@@ -28,19 +28,18 @@ public class BlockEntityCrop extends BlockCrops {
 		setRegistryName(regname);
 		GameRegistry.register(this);
 		GameRegistry.register(new ItemBlock(this), getRegistryName());
-		int age = getAge(state);
-		if (age >= getMaxAge()) {
-
-		}
 
 	}
 
 	@Override
 	public void onBlockHarvested(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
+		int age = this.getAge(state);
+		if (age >= getMaxAge()) {	
 		crop.posX = pos.getX();
 		crop.posY = pos.getY();
 		crop.posZ = pos.getZ();
 		world.spawnEntityInWorld(crop);
+		}
 	}
 
 	@Override
