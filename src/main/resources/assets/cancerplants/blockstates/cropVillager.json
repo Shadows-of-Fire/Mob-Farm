@@ -1,0 +1,50 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cross"
+	},
+	"variants": {
+		"age": {
+			"0": {
+				"textures": {
+					"cross": "cancerplants:blocks/cropVillager/0"
+				}
+			},
+			"1": {
+				"textures": {
+					"cross": "cancerplants:blocks/cropVillager/1"
+				}
+			},
+			"2": {
+				"textures": {
+					"cross": "cancerplants:blocks/cropVillager/2"
+				}
+			},
+			"3": {
+				"textures": {
+					"cross": "cancerplants:blocks/cropVillager/3"
+				}
+			},
+			"4": {
+				"textures": {
+					"cross": "cancerplants:blocks/cropVillager/4"
+				}
+			},
+			"5": {
+				"textures": {
+					"cross": "cancerplants:blocks/cropVillager/5"
+				}
+			},
+			"6": {
+				"textures": {
+					"cross": "cancerplants:blocks/cropVillager/6"
+				}
+			},
+			"7": {
+				"textures": {
+					"cross": "cancerplants:blocks/cropVillager/7"
+				}
+			}
+		}
+	}
+}

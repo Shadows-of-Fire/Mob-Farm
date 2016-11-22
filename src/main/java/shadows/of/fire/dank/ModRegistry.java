@@ -1,6 +1,9 @@
 package shadows.of.fire.dank;
 
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraftforge.fml.relauncher.*;
 
 public class ModRegistry {
@@ -83,7 +86,14 @@ public class ModRegistry {
 	public static ItemModSeed seedVillager;
 //	public static BlockCommandCrop cropCoded;
 //	public static ItemModSeed seedCoded;
-	
+    public static final CreativeTabs CANCERSEEDS = new CreativeTabs("mobfarm")
+    {
+        @SideOnly(Side.CLIENT) @Override
+        public Item getTabIconItem()
+        {
+            return Items.WHEAT_SEEDS;
+        }
+    };
 
 	public static void init() {
 	//	cropBone = new BlockModCrop("cropBone", ModRegistry.seedBone, Items.BONE);
@@ -243,6 +253,7 @@ public class ModRegistry {
 	}
 
 }
+
 
 
 /* We need a crop for each one.  Damn that's a lot.'

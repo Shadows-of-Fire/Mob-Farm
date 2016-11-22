@@ -1,7 +1,7 @@
 [
 {
   "modid": "cancerplants",
-  "name": "Random Plants",
+  "name": "Mob Farm",
   "description": "Wat",
   "version": "${version}",
   "mcversion": "${mcversion}",

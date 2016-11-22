@@ -1,0 +1,50 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cross"
+	},
+	"variants": {
+		"age": {
+			"0": {
+				"textures": {
+					"cross": "cancerplants:blocks/cropSheep/0"
+				}
+			},
+			"1": {
+				"textures": {
+					"cross": "cancerplants:blocks/cropSheep/1"
+				}
+			},
+			"2": {
+				"textures": {
+					"cross": "cancerplants:blocks/cropSheep/2"
+				}
+			},
+			"3": {
+				"textures": {
+					"cross": "cancerplants:blocks/cropSheep/3"
+				}
+			},
+			"4": {
+				"textures": {
+					"cross": "cancerplants:blocks/cropSheep/4"
+				}
+			},
+			"5": {
+				"textures": {
+					"cross": "cancerplants:blocks/cropSheep/5"
+				}
+			},
+			"6": {
+				"textures": {
+					"cross": "cancerplants:blocks/cropSheep/6"
+				}
+			},
+			"7": {
+				"textures": {
+					"cross": "cancerplants:blocks/cropSheep/7"
+				}
+			}
+		}
+	}
+}

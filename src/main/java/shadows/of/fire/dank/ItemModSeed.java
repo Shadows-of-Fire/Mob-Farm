@@ -33,7 +33,7 @@ public class ItemModSeed extends Item implements IPlantable{
 		setUnlocalizedName(CancerPlants.MODID + "." + name);
 		setRegistryName(name);
 		GameRegistry.register(this);
-		this.setCreativeTab(CreativeTabs.MATERIALS);
+		this.setCreativeTab(ModRegistry.CANCERSEEDS);
 
 	}
 	

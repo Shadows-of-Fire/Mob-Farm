@@ -1,0 +1,50 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cross"
+	},
+	"variants": {
+		"age": {
+			"0": {
+				"textures": {
+					"cross": "cancerplants:blocks/cropWolf/0"
+				}
+			},
+			"1": {
+				"textures": {
+					"cross": "cancerplants:blocks/cropWolf/1"
+				}
+			},
+			"2": {
+				"textures": {
+					"cross": "cancerplants:blocks/cropWolf/2"
+				}
+			},
+			"3": {
+				"textures": {
+					"cross": "cancerplants:blocks/cropWolf/3"
+				}
+			},
+			"4": {
+				"textures": {
+					"cross": "cancerplants:blocks/cropWolf/4"
+				}
+			},
+			"5": {
+				"textures": {
+					"cross": "cancerplants:blocks/cropWolf/5"
+				}
+			},
+			"6": {
+				"textures": {
+					"cross": "cancerplants:blocks/cropWolf/6"
+				}
+			},
+			"7": {
+				"textures": {
+					"cross": "cancerplants:blocks/cropWolf/7"
+				}
+			}
+		}
+	}
+}
