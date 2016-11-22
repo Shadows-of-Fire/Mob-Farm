@@ -169,75 +169,75 @@ public class ModRegistry {
 	//	seedBone.initModel();
 	//	seedGold.initModel();
 		cropP455.initModel();
-		seedP455.initModel();
+		seedP455.initModel();  //forgot
 		cropCreeper.initModel();
-		seedCreeper.initModel();
+		seedCreeper.initModel();  //Green +100
 		cropSkeleton.initModel();
-		seedSkeleton.initModel();
+		seedSkeleton.initModel();  //-100; +73; +70
 		cropSpider.initModel();
-		seedSpider.initModel();
+		seedSpider.initModel();  //Lightness -34
 	//	cropGiant.initModel();
 	//	seedGiant.initModel();
 		cropZombie.initModel();
-		seedZombie.initModel();
+		seedZombie.initModel();  //-42; -29; -36
 		cropSlime.initModel();
-		seedSlime.initModel();
+		seedSlime.initModel();  //-100, +100, -100
 		cropGhast.initModel();
-		seedGhast.initModel();
+		seedGhast.initModel();  //-100; -15; 10
 		cropPigZombie.initModel();
-		seedPigZombie.initModel();
+		seedPigZombie.initModel();  //+44; -40; 0
 		cropEnderman.initModel();
-		seedEnderman.initModel();
+		seedEnderman.initModel();  //Gamma Correction 0.3
 		cropCaveSpider.initModel();
-		seedCaveSpider.initModel();
-		cropSilverfish.initModel();
-		seedSilverfish.initModel();
-		cropBlaze.initModel();
-		seedBlaze.initModel();
+		seedCaveSpider.initModel();  //-37; -47; +39
+		cropSilverfish.initModel();  
+		seedSilverfish.initModel();  //-100
+		cropBlaze.initModel();  
+		seedBlaze.initModel();  //forgot
 		cropLavaSlime.initModel();
-		seedLavaSlime.initModel();
+		seedLavaSlime.initModel();  //+100
 	//	cropEnderDragon.initModel();
 	//	seedEnderDragon.initModel();
 	//	cropWitherBoss.initModel();
 	//	seedWitherBoss.initModel();
 		cropBat.initModel();
-		seedBat.initModel();
+		seedBat.initModel();  //Channel Mixer +200; -142; -19; -70
 		cropWitch.initModel();
-		seedWitch.initModel();
+		seedWitch.initModel();  //-100; -100; +100
 		cropEndermite.initModel();
-		seedEndermite.initModel();
+		seedEndermite.initModel();  //0; -58; 0
 		cropGuardian.initModel();
-		seedGuardian.initModel();
+		seedGuardian.initModel();  //Green Channel Mixer +67; +95; -88; +9
 		cropShulker.initModel();
-		seedShulker.initModel();
+		seedShulker.initModel();  //0; -74; +70
 		cropPig.initModel();
-		seedPig.initModel();
+		seedPig.initModel();  //+40; +7
 		cropSheep.initModel();
-		seedSheep.initModel();
+		seedSheep.initModel();  //-100; +15; -3
 		cropCow.initModel();
-		seedCow.initModel();
+		seedCow.initModel();  //+51; +18; +1
 		cropChicken.initModel();
-		seedChicken.initModel();
+		seedChicken.initModel();  //Blue Channel Mixer +21; -39; +126
 		cropSquid.initModel();
-		seedSquid.initModel();
+		seedSquid.initModel();  //0; -100; +100
 		cropWolf.initModel();
-		seedWolf.initModel();
+		seedWolf.initModel(); //-100; -15
 		cropMushroomCow.initModel();
-		seedMushroomCow.initModel();
+		seedMushroomCow.initModel();  //100; 19; 48
 	//	cropSnowMan.initModel();
 	//	seedSnowMan.initModel();
 		cropOzelot.initModel();
-		seedOzelot.initModel();
+		seedOzelot.initModel();  //0; 48; -49
 	//	cropVillagerGolem.initModel();
 	//	seedVillagerGolem.initModel();
 		cropEntityHorse.initModel();
-		seedEntityHorse.initModel();
+		seedEntityHorse.initModel();  //-72; -48; 68
 		cropRabbit.initModel();
-		seedRabbit.initModel();
+		seedRabbit.initModel();  //-39; 3
 		cropPolarBear.initModel();
-		seedPolarBear.initModel();
+		seedPolarBear.initModel(); //Lightness +57
 		cropVillager.initModel();
-		seedVillager.initModel();
+		seedVillager.initModel();  //0; 100; -58
 	//	cropCoded.initModel();
 	//	seedCoded.initModel();
 	}
