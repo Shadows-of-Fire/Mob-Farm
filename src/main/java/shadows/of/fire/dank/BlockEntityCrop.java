@@ -33,16 +33,16 @@ public class BlockEntityCrop extends BlockCrops {
 		//For if I ever try to use the automatic color system.
 	}
 
-	@Override
-	public void onBlockHarvested(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
-		if (!world.isRemote) {
-			int age = getAge(state);
-			if (age >= getMaxAge()) {
+	//@Override
+	//public void onBlockHarvested(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
+	//	if (!world.isRemote) {
+	//		int age = getAge(state);
+	//		if (age >= getMaxAge()) {
 				//ItemMonsterPlacer.spawnCreature(world, crop, pos.getX(), pos.getY(), pos.getZ());
 				
-			}
-		}
-	}
+	//		}
+	//	}
+	//}
 
 	
 	
