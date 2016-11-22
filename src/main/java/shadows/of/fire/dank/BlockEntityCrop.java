@@ -38,12 +38,15 @@ public class BlockEntityCrop extends BlockCrops {
 		if (!world.isRemote) {
 			int age = getAge(state);
 			if (age >= getMaxAge()) {
-				ItemMonsterPlacer.spawnCreature(world, crop, pos.getX(), pos.getY(), pos.getZ());
+				//ItemMonsterPlacer.spawnCreature(world, crop, pos.getX(), pos.getY(), pos.getZ());
 				
 			}
 		}
 	}
 
+	
+	
+	
 	@Override
 	protected Item getSeed() {
 		return Item.getByNameOrId("cancerplants:seed" + regname.substring(4));
@@ -71,7 +74,8 @@ public class BlockEntityCrop extends BlockCrops {
 		int age = getAge(state);
 
 		if (age >= getMaxAge()) {
-
+			
+			ItemMonsterPlacer.spawnCreature((World) world, crop, pos.getX(), pos.getY(), pos.getZ());
 		}
 
 		return ret;
