@@ -4,6 +4,8 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 
 public class RecipeManager {
 
@@ -27,7 +29,7 @@ public class RecipeManager {
 		GameRegistry.addRecipe(new ItemStack(ModRegistry.seedLavaSlime), new Object[] {"CBC", "BSB", "CBC", 'C', Items.MAGMA_CREAM, 'B', Items.SLIME_BALL, 'S', Items.WHEAT_SEEDS});
 		GameRegistry.addRecipe(new ItemStack(ModRegistry.seedMushroomCow), new Object[] {"BRB", "RSR", "BRB", 'R', Blocks.RED_MUSHROOM, 'B', Blocks.BROWN_MUSHROOM, 'S', ModRegistry.seedCow});
 		GameRegistry.addRecipe(new ItemStack(ModRegistry.seedOzelot), new Object[] {"FFF", " S ", "FFF", 'F', Items.FISH, 'S', Items.WHEAT_SEEDS});
-		GameRegistry.addRecipe(new ItemStack(ModRegistry.seedP455), new Object[] {"   ", "HSH", "   ", 'H', Blocks.SKULL, 'S', Items.WHEAT_SEEDS});
+		GameRegistry.addRecipe(new ShapedOreRecipe(ModRegistry.seedP455, "   ", "HSH", "   ", 'H', "itemSkull", 'S', Items.WHEAT_SEEDS));
 		GameRegistry.addRecipe(new ItemStack(ModRegistry.seedPig), new Object[] {"PPP", "PSP", "PPP", 'P', Items.PORKCHOP, 'S', Items.WHEAT_SEEDS});
 		GameRegistry.addRecipe(new ItemStack(ModRegistry.seedPigZombie), new Object[] {"FPF", "FSF", "FPF", 'F', Items.ROTTEN_FLESH, 'P', Items.COOKED_PORKCHOP, 'S', Items.WHEAT_SEEDS});
 		GameRegistry.addRecipe(new ItemStack(ModRegistry.seedPolarBear), new Object[] {"BFB", "LSL", "BFB", 'L', Items.LEATHER, 'B', Items.SNOWBALL, 'F', Items.FISH, 'S', Items.WHEAT_SEEDS});
