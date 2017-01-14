@@ -5,6 +5,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.relauncher.*;
+import net.minecraft.entity.boss.EntityWither;
 
 public class ModRegistry {
 
@@ -42,10 +43,10 @@ public class ModRegistry {
 	public static ItemModSeed seedBlaze;
 	public static BlockEntityCrop cropLavaSlime;
 	public static ItemModSeed seedLavaSlime;
-//	public static BlockEntityCrop cropEnderDragon;
-//	public static ItemModSeed seedEnderDragon;
-//	public static BlockEntityCrop cropWitherBoss;
-//	public static ItemModSeed seedWitherBoss;
+	public static BlockEntityCrop2 cropEnderDragon;
+	public static ItemModSeed seedEnderDragon;
+	public static BlockEntityCrop2 cropWitherBoss;
+	public static ItemModSeed seedWitherBoss;
 	public static BlockEntityCrop cropBat;
 	public static ItemModSeed seedBat;
 	public static BlockEntityCrop cropWitch;
@@ -128,10 +129,10 @@ public class ModRegistry {
 		seedBlaze = new ItemModSeed("seedBlaze");
 		cropLavaSlime = new BlockEntityCrop("cropLavaSlime");
 		seedLavaSlime = new ItemModSeed("seedLavaSlime");
-	//	cropEnderDragon = new BlockEntityCrop("cropEnderDragon");
-	//	seedEnderDragon = new ItemModSeed("seedEnderDragon");
-	//	cropWitherBoss = new BlockEntityCrop("cropWitherBoss");
-	//	seedWitherBoss = new ItemModSeed("seedWitherBoss");
+		cropEnderDragon = new BlockEntityCrop2("cropEnderDragon");
+		seedEnderDragon = new ItemModSeed("seedEnderDragon");
+		cropWitherBoss = new BlockEntityCrop2("cropWitherBoss");
+		seedWitherBoss = new ItemModSeed("seedWitherBoss");
 		cropBat = new BlockEntityCrop("cropBat");
 		seedBat = new ItemModSeed("seedBat");
 		cropWitch = new BlockEntityCrop("cropWitch");

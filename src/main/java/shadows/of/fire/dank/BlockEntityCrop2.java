@@ -1,10 +1,15 @@
 package shadows.of.fire.dank;
 
+
 import java.util.*;
 
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityList;
+import net.minecraft.entity.boss.EntityDragon;
+import net.minecraft.entity.boss.EntityWither;
 import net.minecraft.item.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -12,21 +17,21 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.*;
 
-public class BlockEntityCrop extends BlockCrops {
+public class BlockEntityCrop2 extends BlockCrops {
 	public Item seed;
 	public String regname;
 	public String crop;
+	public Entity entity;
 
 	IBlockState state;
 
-	public BlockEntityCrop(String name/*int r, int g, int b*/) {
+	public BlockEntityCrop2(String name/*int r, int g, int b*/) {
 		regname = name;
 		crop = name.substring(4);
 		setUnlocalizedName(CancerPlants.MODID + "." + name);
 		setRegistryName(regname);
 		GameRegistry.register(this);
 		GameRegistry.register(new ItemBlock(this), getRegistryName());
-		
 		//int endermanEggColor1 = new Color(r, g, b).getRGB(); 
 		//For if I ever try to use the automatic color system.
 	}
@@ -57,7 +62,7 @@ public class BlockEntityCrop extends BlockCrops {
 
 	@Override
 	public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state) {
-		return false;
+		return true;
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -72,8 +77,10 @@ public class BlockEntityCrop extends BlockCrops {
 		int age = getAge(state);
 
 		if (age >= getMaxAge()) {
+			entity = EntityList.createEntityByName(crop, (World) world);	
 			
-			ItemMonsterPlacer.spawnCreature((World) world, crop, pos.getX(), pos.getY(), pos.getZ());
+			
+			Util.spawnCreature((World) world, entity, pos.getX(), pos.getY(), pos.getZ());
 		}
 
 		return ret;
