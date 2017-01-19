@@ -1,0 +1,50 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cross"
+	},
+	"variants": {
+		"age": {
+			"0": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropzombie/0"
+				}
+			},
+			"1": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropzombie/1"
+				}
+			},
+			"2": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropzombie/2"
+				}
+			},
+			"3": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropzombie/3"
+				}
+			},
+			"4": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropzombie/4"
+				}
+			},
+			"5": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropzombie/5"
+				}
+			},
+			"6": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropzombie/6"
+				}
+			},
+			"7": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropzombie/7"
+				}
+			}
+		}
+	}
+}

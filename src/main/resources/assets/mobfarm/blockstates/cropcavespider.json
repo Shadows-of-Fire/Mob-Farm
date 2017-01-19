@@ -1,0 +1,50 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cross"
+	},
+	"variants": {
+		"age": {
+			"0": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropcavespider/0"
+				}
+			},
+			"1": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropcavespider/1"
+				}
+			},
+			"2": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropcavespider/2"
+				}
+			},
+			"3": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropcavespider/3"
+				}
+			},
+			"4": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropcavespider/4"
+				}
+			},
+			"5": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropcavespider/5"
+				}
+			},
+			"6": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropcavespider/6"
+				}
+			},
+			"7": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropcavespider/7"
+				}
+			}
+		}
+	}
+}

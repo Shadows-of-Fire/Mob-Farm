@@ -1,0 +1,50 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cross"
+	},
+	"variants": {
+		"age": {
+			"0": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropsheep/0"
+				}
+			},
+			"1": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropsheep/1"
+				}
+			},
+			"2": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropsheep/2"
+				}
+			},
+			"3": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropsheep/3"
+				}
+			},
+			"4": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropsheep/4"
+				}
+			},
+			"5": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropsheep/5"
+				}
+			},
+			"6": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropsheep/6"
+				}
+			},
+			"7": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropsheep/7"
+				}
+			}
+		}
+	}
+}

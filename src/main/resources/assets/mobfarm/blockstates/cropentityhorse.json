@@ -1,0 +1,50 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cross"
+	},
+	"variants": {
+		"age": {
+			"0": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropentityhorse/0"
+				}
+			},
+			"1": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropentityhorse/1"
+				}
+			},
+			"2": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropentityhorse/2"
+				}
+			},
+			"3": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropentityhorse/3"
+				}
+			},
+			"4": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropentityhorse/4"
+				}
+			},
+			"5": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropentityhorse/5"
+				}
+			},
+			"6": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropentityhorse/6"
+				}
+			},
+			"7": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropentityhorse/7"
+				}
+			}
+		}
+	}
+}

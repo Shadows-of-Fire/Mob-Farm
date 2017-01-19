@@ -1,0 +1,50 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cross"
+	},
+	"variants": {
+		"age": {
+			"0": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropghast/0"
+				}
+			},
+			"1": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropghast/1"
+				}
+			},
+			"2": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropghast/2"
+				}
+			},
+			"3": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropghast/3"
+				}
+			},
+			"4": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropghast/4"
+				}
+			},
+			"5": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropghast/5"
+				}
+			},
+			"6": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropghast/6"
+				}
+			},
+			"7": {
+				"textures": {
+					"cross": "mobfarm:blocks/cropghast/7"
+				}
+			}
+		}
+	}
+}

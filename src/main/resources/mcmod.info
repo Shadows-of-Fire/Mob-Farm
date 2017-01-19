@@ -1,14 +1,14 @@
 [
 {
-  "modid": "cancerplants",
+  "modid": "mobfarm",
   "name": "Mob Farm",
-  "description": "Wat",
+  "description": "Plants that spawn monsters",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
   "authorList": ["Shadows_of_Fire"],
-  "credits": "Adolf Hitler",
+  "credits": "",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
