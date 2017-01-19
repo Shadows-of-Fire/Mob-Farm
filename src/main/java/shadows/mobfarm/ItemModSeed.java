@@ -3,7 +3,6 @@ package shadows.mobfarm;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -46,12 +45,15 @@ public class ItemModSeed extends Item implements IPlantable{
         return crops.getDefaultState();
     }	
     
-    public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
+    @Override
+    public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
-        if (facing == EnumFacing.UP && playerIn.canPlayerEdit(pos.offset(facing), facing, stack) && (world.getBlockState(pos).getBlock() == Blocks.FARMLAND) && world.isAirBlock(pos.up()))
+        ItemStack itemstack = player.getHeldItem(hand);
+        net.minecraft.block.state.IBlockState state = worldIn.getBlockState(pos);
+        if (facing == EnumFacing.UP && player.canPlayerEdit(pos.offset(facing), facing, itemstack) && state.getBlock().canSustainPlant(state, worldIn, pos, EnumFacing.UP, this) && worldIn.isAirBlock(pos.up()))
         {
-            world.setBlockState(pos.up(), this.crops.getDefaultState());
-            stack.shrink(1);
+            worldIn.setBlockState(pos.up(), this.crops.getDefaultState());
+            itemstack.shrink(1);
             return EnumActionResult.SUCCESS;
         }
         else

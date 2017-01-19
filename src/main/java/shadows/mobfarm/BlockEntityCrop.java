@@ -5,6 +5,7 @@ import java.util.*;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.entity.passive.EntityHorse;
 import net.minecraft.item.*;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -31,20 +32,6 @@ public class BlockEntityCrop extends BlockCrops {
 		//int endermanEggColor1 = new Color(r, g, b).getRGB(); 
 		//For if I ever try to use the automatic color system.
 	}
-
-	//@Override
-	//public void onBlockHarvested(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
-	//	if (!world.isRemote) {
-	//		int age = getAge(state);
-	//		if (age >= getMaxAge()) {
-				//ItemMonsterPlacer.spawnCreature(world, crop, pos.getX(), pos.getY(), pos.getZ());
-				
-	//		}
-	//	}
-	//}
-
-	
-	
 	
 	@Override
 	protected Item getSeed() {
@@ -62,8 +49,8 @@ public class BlockEntityCrop extends BlockCrops {
 	}
 
 	@SideOnly(Side.CLIENT)
-	public void initModel() {
-		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(regname, "inventory"));
+	public void initModel(){
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName(), "inventory"));
 	}
 
 	@Override
@@ -73,8 +60,8 @@ public class BlockEntityCrop extends BlockCrops {
 		int age = getAge(state);
 
 		if (age >= getMaxAge()) {
-			
 			ItemMonsterPlacer.spawnCreature((World) world, crop, pos.getX(), pos.getY(), pos.getZ());
+			
 		}
 
 		return ret;

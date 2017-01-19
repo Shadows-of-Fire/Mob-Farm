@@ -45,6 +45,7 @@
 					"cross": "mobfarm:blocks/cropbat/7"
 				}
 			}
+		},
+	"inventory": [{}]
 		}
-	}
 }
