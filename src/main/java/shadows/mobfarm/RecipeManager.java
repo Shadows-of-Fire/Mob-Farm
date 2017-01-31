@@ -29,7 +29,7 @@ public class RecipeManager {
 		GameRegistry.addRecipe(new ItemStack(ModRegistry.seedLavaSlime), new Object[] {"CBC", "BSB", "CBC", 'C', Items.MAGMA_CREAM, 'B', Items.SLIME_BALL, 'S', Items.WHEAT_SEEDS});
 		GameRegistry.addRecipe(new ItemStack(ModRegistry.seedMushroomCow), new Object[] {"BRB", "RSR", "BRB", 'R', Blocks.RED_MUSHROOM, 'B', Blocks.BROWN_MUSHROOM, 'S', ModRegistry.seedCow});
 		GameRegistry.addRecipe(new ItemStack(ModRegistry.seedOzelot), new Object[] {"FFF", " S ", "FFF", 'F', Items.FISH, 'S', Items.WHEAT_SEEDS});
-		GameRegistry.addRecipe(new ShapedOreRecipe(ModRegistry.seedP455, "   ", "HSH", "   ", 'H', "itemSkull", 'S', Items.WHEAT_SEEDS));
+		//GameRegistry.addRecipe(new ItemStack(ModRegistry.seedP455), "   ", "HSH", "   ", 'H', new ItemStack(Items.SKULL, 1, 0), 'S', Items.WHEAT_SEEDS);
 		GameRegistry.addRecipe(new ItemStack(ModRegistry.seedPig), new Object[] {"PPP", "PSP", "PPP", 'P', Items.PORKCHOP, 'S', Items.WHEAT_SEEDS});
 		GameRegistry.addRecipe(new ItemStack(ModRegistry.seedPigZombie), new Object[] {"FPF", "FSF", "FPF", 'F', Items.ROTTEN_FLESH, 'P', Items.COOKED_PORKCHOP, 'S', Items.WHEAT_SEEDS});
 		GameRegistry.addRecipe(new ItemStack(ModRegistry.seedPolarBear), new Object[] {"BFB", "LSL", "BFB", 'L', Items.LEATHER, 'B', Items.SNOWBALL, 'F', Items.FISH, 'S', Items.WHEAT_SEEDS});
@@ -45,6 +45,9 @@ public class RecipeManager {
 		GameRegistry.addRecipe(new ItemStack(ModRegistry.seedWitch), new Object[] {"GRP", "TST", "PRG", 'T', Items.STICK, 'G', Items.GLOWSTONE_DUST, 'R', Items.REDSTONE, 'P', Items.GLASS_BOTTLE, 'S', Items.WHEAT_SEEDS});
 		GameRegistry.addRecipe(new ItemStack(ModRegistry.seedWolf), new Object[] {" B ", "BSB", " B ", 'B', Items.BONE, 'S', Items.WHEAT_SEEDS});
 		GameRegistry.addRecipe(new ItemStack(ModRegistry.seedZombie), new Object[] {"FFF", "FSF", "FFF", 'F', Items.ROTTEN_FLESH, 'S', Items.WHEAT_SEEDS});
+		if(ConfigFile.dragon) GameRegistry.addRecipe(new ItemStack(ModRegistry.seedEnderDragon), new Object[] {" F ", " S ", "   ", 'F', Blocks.DRAGON_EGG, 'S', ModRegistry.seedEnderman});
+		GameRegistry.addRecipe(new ItemStack(ModRegistry.seedWitherSkeleton), " F ", "FSF", " F ", 'F', new ItemStack(Items.SKULL, 1, 1), 'S', new ItemStack(ModRegistry.seedSkeleton));
+		if(ConfigFile.wither) GameRegistry.addRecipe(new ItemStack(ModRegistry.seedWitherBoss), new Object[] {" F ", "FSF", " F ", 'F', Items.NETHER_STAR, 'S', ModRegistry.seedWitherSkeleton});
 	
 	
 	

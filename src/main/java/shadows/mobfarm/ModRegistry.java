@@ -72,6 +72,8 @@ public class ModRegistry {
 	public static ItemModSeed seedWolf;
 	public static BlockEntityCrop2 cropMushroomCow;
 	public static ItemModSeed seedMushroomCow;
+	public static BlockEntityCrop2 cropWitherSkeleton;
+	public static ItemModSeed seedWitherSkeleton;
 //	public static BlockEntityCrop cropSnowMan;
 //	public static ItemModSeed seedSnowMan;
 	public static BlockEntityCrop2 cropOzelot;
@@ -93,7 +95,7 @@ public class ModRegistry {
         @SideOnly(Side.CLIENT) @Override
         public ItemStack getTabIconItem()
         {
-            return new ItemStack(seedP455);
+            return new ItemStack(seedEnderDragon);
         }
     };
 
@@ -158,6 +160,8 @@ public class ModRegistry {
 		seedWolf = new ItemModSeed("seedWolf");
 		cropMushroomCow = new BlockEntityCrop2("cropMushroomCow", 7);
 		seedMushroomCow = new ItemModSeed("seedMushroomCow");
+		cropWitherSkeleton = new BlockEntityCrop2("cropWitherSkeleton", 10);
+		seedWitherSkeleton = new ItemModSeed("seedWitherSkeleton");
 	//	cropSnowMan = new BlockEntityCrop("cropSnowMan");
 	//	seedSnowMan = new ItemModSeed("seedSnowMan");
 		cropOzelot = new BlockEntityCrop2("cropOzelot", 5);
@@ -177,7 +181,7 @@ public class ModRegistry {
 	}
 
 	@SideOnly(Side.CLIENT)
-	public static void initModels() {//this is only needed for seeds, but why?
+	public static void initModels() {
 	//	seedBone.initModel();
 	//	seedGold.initModel();
 		cropP455.initModel();
@@ -236,6 +240,9 @@ public class ModRegistry {
 		seedWolf.initModel(); //-100; -15
 		cropMushroomCow.initModel();
 		seedMushroomCow.initModel();  //100; 19; 48
+		cropWitherSkeleton.initModel();
+		seedWitherSkeleton.initModel();
+		seedMushroomCow.initModel();
 	//	cropSnowMan.initModel();
 	//	seedSnowMan.initModel();
 		cropOzelot.initModel();

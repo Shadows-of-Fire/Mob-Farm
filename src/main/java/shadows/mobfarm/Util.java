@@ -20,6 +20,7 @@ public class Util {
 	//Spawns an EntityLiving in world at position.
     public static void spawnCreature(World world, Entity entity, double x, double y, double z)
     {
+    if(!world.isRemote){
     if (entity instanceof EntityDragon){
     	
         world.getChunkFromBlockCoords(new BlockPos(0, 128, 0));
@@ -40,6 +41,7 @@ public class Util {
         entityliving.playLivingSound();
     
 	
+    }
     }
     }
 	

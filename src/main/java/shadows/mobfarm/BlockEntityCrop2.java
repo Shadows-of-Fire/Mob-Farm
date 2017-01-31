@@ -14,6 +14,7 @@ import net.minecraft.entity.monster.EntityCaveSpider;
 import net.minecraft.entity.monster.EntityMagmaCube;
 import net.minecraft.entity.monster.EntityPigZombie;
 import net.minecraft.entity.monster.EntityPolarBear;
+import net.minecraft.entity.monster.EntityWitherSkeleton;
 import net.minecraft.entity.passive.EntityHorse;
 import net.minecraft.entity.passive.EntityMooshroom;
 import net.minecraft.entity.passive.EntityOcelot;
@@ -70,7 +71,7 @@ public class BlockEntityCrop2 extends BlockCrops {
 
 	@Override
 	public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state) {
-		return true;
+		return ConfigFile.allowBonemeal;	
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -95,6 +96,7 @@ public class BlockEntityCrop2 extends BlockCrops {
 			case(7): entity = new EntityMooshroom(world); break;
 			case(8): entity = new EntityMagmaCube(world); break;
 			case(9): entity = new EntityPolarBear(world); break;
+			case(10): entity = new EntityWitherSkeleton(world); break;
 			default: entity = null; break;
 			}
 			Util.spawnCreature((World) world, entity, pos.getX(), pos.getY(), pos.getZ());

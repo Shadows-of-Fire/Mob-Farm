@@ -5,10 +5,13 @@ import java.util.*;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityList;
 import net.minecraft.entity.passive.EntityHorse;
 import net.minecraft.item.*;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -45,7 +48,7 @@ public class BlockEntityCrop extends BlockCrops {
 
 	@Override
 	public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state) {
-		return false;
+		return ConfigFile.allowBonemeal;
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -54,13 +57,15 @@ public class BlockEntityCrop extends BlockCrops {
 	}
 
 	@Override
-	public java.util.List<ItemStack> getDrops(net.minecraft.world.IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
+	public java.util.List<ItemStack> getDrops(IBlockAccess iworld, BlockPos pos, IBlockState state, int fortune) {
+		World world = (World) iworld;
 		java.util.List<ItemStack> ret = new ArrayList<ItemStack>();
 		ret.add(new ItemStack(getSeed()));
 		int age = getAge(state);
 
 		if (age >= getMaxAge()) {
-			ItemMonsterPlacer.spawnCreature((World) world, crop, pos.getX(), pos.getY(), pos.getZ());
+			Entity entity = EntityList.createEntityByIDFromName(crop, world);
+			Util.spawnCreature(world, entity, pos.getX(), pos.getY(), pos.getZ());
 			
 		}
 

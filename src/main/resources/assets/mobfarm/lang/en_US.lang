@@ -30,6 +30,7 @@ item.mobfarm.seedpolarbear.name=Polar Bear Seeds
 item.mobfarm.seedvillager.name=Villager Seeds
 item.mobfarm.seedenderdragon.name=Ender Dragon Seeds
 item.mobfarm.seedwitherboss.name=Wither Seeds
+item.mobfarm.seedwitherskeleton.name=Wither Skeleton Seeds
 
 
 itemGroup.mobfarm=Mob Farm
@@ -65,5 +66,6 @@ tile.mobfarm.cropentityhorse.name=Horse Crops
 tile.mobfarm.croprabbit.name=Rabbit Crops
 tile.mobfarm.croppolarbear.name=Polar Bear Crops
 tile.mobfarm.cropvillager.name=Villager Crops
-item.mobfarm.cropenderdragon.name=Ender Dragon Crops
-item.mobfarm.cropwitherboss.name=Wither Crops
+tile.mobfarm.cropenderdragon.name=Ender Dragon Crops
+tile.mobfarm.cropwitherboss.name=Wither Crops
+tile.mobfarm.cropwitherskeleton.name=Wither Skeleton Crops
