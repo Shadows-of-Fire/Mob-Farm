@@ -1,12 +1,10 @@
 package shadows.mobfarm;
 
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.relauncher.*;
-import net.minecraft.entity.boss.EntityWither;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ModRegistry {
 
@@ -24,8 +22,8 @@ public class ModRegistry {
 	public static ItemModSeed seedSkeleton;
 	public static BlockEntityCrop cropSpider;
 	public static ItemModSeed seedSpider;
-//	public static BlockEntityCrop cropGiant;
-//	public static ItemModSeed seedGiant;
+	//	public static BlockEntityCrop cropGiant;
+	//	public static ItemModSeed seedGiant;
 	public static BlockEntityCrop cropZombie;
 	public static ItemModSeed seedZombie;
 	public static BlockEntityCrop cropSlime;
@@ -74,12 +72,12 @@ public class ModRegistry {
 	public static ItemModSeed seedMushroomCow;
 	public static BlockEntityCrop2 cropWitherSkeleton;
 	public static ItemModSeed seedWitherSkeleton;
-//	public static BlockEntityCrop cropSnowMan;
-//	public static ItemModSeed seedSnowMan;
+	//	public static BlockEntityCrop cropSnowMan;
+	//	public static ItemModSeed seedSnowMan;
 	public static BlockEntityCrop2 cropOzelot;
 	public static ItemModSeed seedOzelot;
-//	public static BlockEntityCrop cropVillagerGolem;
-//	public static ItemModSeed seedVillagerGolem;
+	//	public static BlockEntityCrop cropVillagerGolem;
+	//	public static ItemModSeed seedVillagerGolem;
 	public static BlockEntityCrop2 cropEntityHorse;
 	public static ItemModSeed seedEntityHorse;
 	public static BlockEntityCrop cropRabbit;
@@ -88,22 +86,21 @@ public class ModRegistry {
 	public static ItemModSeed seedPolarBear;
 	public static BlockEntityCrop cropVillager;
 	public static ItemModSeed seedVillager;
-//	public static BlockCommandCrop cropCoded;
-//	public static ItemModSeed seedCoded;
-    public static final CreativeTabs MOBFARM = new CreativeTabs("mobfarm")
-    {
-        @SideOnly(Side.CLIENT) @Override
-        public ItemStack getTabIconItem()
-        {
-            return new ItemStack(seedEnderDragon);
-        }
-    };
+	//	public static BlockCommandCrop cropCoded;
+	//	public static ItemModSeed seedCoded;
+	public static final CreativeTabs MOBFARM = new CreativeTabs("mobfarm") {
+		@SideOnly(Side.CLIENT)
+		@Override
+		public ItemStack getTabIconItem() {
+			return new ItemStack(seedEnderDragon);
+		}
+	};
 
 	public static void init() {
-	//	cropBone = new BlockModCrop("cropBone", ModRegistry.seedBone, Items.BONE);
-	//	seedBone = new ItemModSeed("seedBone", ModRegistry.cropBone);
-	//	cropGold = new BlockModCrop("cropGold", ModRegistry.seedGold, Items.GOLD_NUGGET);
-	//	seedGold = new ItemModSeed("seedGold", ModRegistry.cropGold);
+		//	cropBone = new BlockModCrop("cropBone", ModRegistry.seedBone, Items.BONE);
+		//	seedBone = new ItemModSeed("seedBone", ModRegistry.cropBone);
+		//	cropGold = new BlockModCrop("cropGold", ModRegistry.seedGold, Items.GOLD_NUGGET);
+		//	seedGold = new ItemModSeed("seedGold", ModRegistry.cropGold);
 		cropP455 = new BlockModCrop("cropP455", Items.SKULL, "TheRealp455w0rd");
 		seedP455 = new ItemModSeed("seedP455");
 		cropCreeper = new BlockEntityCrop("cropCreeper");
@@ -112,8 +109,8 @@ public class ModRegistry {
 		seedSkeleton = new ItemModSeed("seedSkeleton");
 		cropSpider = new BlockEntityCrop("cropSpider");
 		seedSpider = new ItemModSeed("seedSpider");
-	//	cropGiant = new BlockEntityCrop("cropGiant");  These don't work anyhow.  Sad day.
-	//	seedGiant = new ItemModSeed("seedGiant");
+		//	cropGiant = new BlockEntityCrop("cropGiant");  These don't work anyhow.  Sad day.
+		//	seedGiant = new ItemModSeed("seedGiant");
 		cropZombie = new BlockEntityCrop("cropZombie");
 		seedZombie = new ItemModSeed("seedZombie");
 		cropSlime = new BlockEntityCrop("cropSlime");
@@ -162,12 +159,12 @@ public class ModRegistry {
 		seedMushroomCow = new ItemModSeed("seedMushroomCow");
 		cropWitherSkeleton = new BlockEntityCrop2("cropWitherSkeleton", 10);
 		seedWitherSkeleton = new ItemModSeed("seedWitherSkeleton");
-	//	cropSnowMan = new BlockEntityCrop("cropSnowMan");
-	//	seedSnowMan = new ItemModSeed("seedSnowMan");
+		//	cropSnowMan = new BlockEntityCrop("cropSnowMan");
+		//	seedSnowMan = new ItemModSeed("seedSnowMan");
 		cropOzelot = new BlockEntityCrop2("cropOzelot", 5);
 		seedOzelot = new ItemModSeed("seedOzelot");
-	//	cropVillagerGolem = new BlockEntityCrop("cropVillagerGolem");  These don't work anyhow.  Sad day.
-	//	seedVillagerGolem = new ItemModSeed("seedVillagerGolem");
+		//	cropVillagerGolem = new BlockEntityCrop("cropVillagerGolem");  These don't work anyhow.  Sad day.
+		//	seedVillagerGolem = new ItemModSeed("seedVillagerGolem");
 		cropEntityHorse = new BlockEntityCrop2("cropEntityHorse", 4);
 		seedEntityHorse = new ItemModSeed("seedEntityHorse");
 		cropRabbit = new BlockEntityCrop("cropRabbit");
@@ -175,95 +172,93 @@ public class ModRegistry {
 		cropPolarBear = new BlockEntityCrop2("cropPolarBear", 9);
 		seedPolarBear = new ItemModSeed("seedPolarBear");
 		cropVillager = new BlockEntityCrop("cropVillager");
-		seedVillager = new ItemModSeed("seedVillager");	
-//		cropCoded = new BlockCommandCrop("cropCoded", "say @TheCodedOne");
-//		seedCoded = new ItemModSeed("seedCoded");
+		seedVillager = new ItemModSeed("seedVillager");
+		//		cropCoded = new BlockCommandCrop("cropCoded", "say @TheCodedOne");
+		//		seedCoded = new ItemModSeed("seedCoded");
 	}
 
 	@SideOnly(Side.CLIENT)
 	public static void initModels() {
-	//	seedBone.initModel();
-	//	seedGold.initModel();
+		//	seedBone.initModel();
+		//	seedGold.initModel();
 		cropP455.initModel();
-		seedP455.initModel();  //forgot
+		seedP455.initModel(); //forgot
 		cropCreeper.initModel();
-		seedCreeper.initModel();  //Green +100
+		seedCreeper.initModel(); //Green +100
 		cropSkeleton.initModel();
-		seedSkeleton.initModel();  //-100; +73; +70
+		seedSkeleton.initModel(); //-100; +73; +70
 		cropSpider.initModel();
-		seedSpider.initModel();  //Lightness -34
-	//	cropGiant.initModel();
-	//	seedGiant.initModel();
+		seedSpider.initModel(); //Lightness -34
+		//	cropGiant.initModel();
+		//	seedGiant.initModel();
 		cropZombie.initModel();
-		seedZombie.initModel();  //-42; -29; -36
+		seedZombie.initModel(); //-42; -29; -36
 		cropSlime.initModel();
-		seedSlime.initModel();  //-100, +100, -100
+		seedSlime.initModel(); //-100, +100, -100
 		cropGhast.initModel();
-		seedGhast.initModel();  //-100; -15; 10
+		seedGhast.initModel(); //-100; -15; 10
 		cropPigZombie.initModel();
-		seedPigZombie.initModel();  //+44; -40; 0
+		seedPigZombie.initModel(); //+44; -40; 0
 		cropEnderman.initModel();
-		seedEnderman.initModel();  //Gamma Correction 0.3
+		seedEnderman.initModel(); //Gamma Correction 0.3
 		cropCaveSpider.initModel();
-		seedCaveSpider.initModel();  //-37; -47; +39
-		cropSilverfish.initModel();  
-		seedSilverfish.initModel();  //-100
-		cropBlaze.initModel();  
-		seedBlaze.initModel();  //forgot
+		seedCaveSpider.initModel(); //-37; -47; +39
+		cropSilverfish.initModel();
+		seedSilverfish.initModel(); //-100
+		cropBlaze.initModel();
+		seedBlaze.initModel(); //forgot
 		cropLavaSlime.initModel();
-		seedLavaSlime.initModel();  //+100
+		seedLavaSlime.initModel(); //+100
 		cropEnderDragon.initModel();
 		seedEnderDragon.initModel();
 		cropWitherBoss.initModel();
 		seedWitherBoss.initModel();
 		cropBat.initModel();
-		seedBat.initModel();  //Channel Mixer +200; -142; -19; -70
+		seedBat.initModel(); //Channel Mixer +200; -142; -19; -70
 		cropWitch.initModel();
-		seedWitch.initModel();  //-100; -100; +100
+		seedWitch.initModel(); //-100; -100; +100
 		cropEndermite.initModel();
-		seedEndermite.initModel();  //0; -58; 0
+		seedEndermite.initModel(); //0; -58; 0
 		cropGuardian.initModel();
-		seedGuardian.initModel();  //Green Channel Mixer +67; +95; -88; +9
+		seedGuardian.initModel(); //Green Channel Mixer +67; +95; -88; +9
 		cropShulker.initModel();
-		seedShulker.initModel();  //0; -74; +70
+		seedShulker.initModel(); //0; -74; +70
 		cropPig.initModel();
-		seedPig.initModel();  //+40; +7
+		seedPig.initModel(); //+40; +7
 		cropSheep.initModel();
-		seedSheep.initModel();  //-100; +15; -3
+		seedSheep.initModel(); //-100; +15; -3
 		cropCow.initModel();
-		seedCow.initModel();  //+51; +18; +1
+		seedCow.initModel(); //+51; +18; +1
 		cropChicken.initModel();
-		seedChicken.initModel();  //Blue Channel Mixer +21; -39; +126
+		seedChicken.initModel(); //Blue Channel Mixer +21; -39; +126
 		cropSquid.initModel();
-		seedSquid.initModel();  //0; -100; +100
+		seedSquid.initModel(); //0; -100; +100
 		cropWolf.initModel();
 		seedWolf.initModel(); //-100; -15
 		cropMushroomCow.initModel();
-		seedMushroomCow.initModel();  //100; 19; 48
+		seedMushroomCow.initModel(); //100; 19; 48
 		cropWitherSkeleton.initModel();
 		seedWitherSkeleton.initModel();
 		seedMushroomCow.initModel();
-	//	cropSnowMan.initModel();
-	//	seedSnowMan.initModel();
+		//	cropSnowMan.initModel();
+		//	seedSnowMan.initModel();
 		cropOzelot.initModel();
-		seedOzelot.initModel();  //0; 48; -49
-	//	cropVillagerGolem.initModel();
-	//	seedVillagerGolem.initModel();
+		seedOzelot.initModel(); //0; 48; -49
+		//	cropVillagerGolem.initModel();
+		//	seedVillagerGolem.initModel();
 		cropEntityHorse.initModel();
-		seedEntityHorse.initModel();  //-72; -48; 68
+		seedEntityHorse.initModel(); //-72; -48; 68
 		cropRabbit.initModel();
-		seedRabbit.initModel();  //-39; 3
+		seedRabbit.initModel(); //-39; 3
 		cropPolarBear.initModel();
 		seedPolarBear.initModel(); //Lightness +57
 		cropVillager.initModel();
-		seedVillager.initModel();  //0; 100; -58
-	//	cropCoded.initModel();
-	//	seedCoded.initModel();
+		seedVillager.initModel(); //0; 100; -58
+		//	cropCoded.initModel();
+		//	seedCoded.initModel();
 	}
 
 }
-
-
 
 /* We need a crop for each one.  Damn that's a lot.'
 addMapping(EntityCreeper.class, "Creeper", 50, 894731, 0);

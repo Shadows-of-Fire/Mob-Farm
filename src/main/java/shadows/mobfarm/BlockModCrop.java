@@ -1,18 +1,24 @@
 package shadows.mobfarm;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Random;
 
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Items;
-import net.minecraft.item.*;
-import net.minecraft.nbt.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemSkull;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagString;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.fml.relauncher.*;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockModCrop extends BlockCrops {
 	public Item seed;
@@ -56,12 +62,14 @@ public class BlockModCrop extends BlockCrops {
 	}
 
 	@SideOnly(Side.CLIENT)
-	public void initModel(){
-		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName(), "inventory"));
+	public void initModel() {
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0,
+				new ModelResourceLocation(getRegistryName(), "inventory"));
 	}
 
 	@Override
-	public java.util.List<ItemStack> getDrops(net.minecraft.world.IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
+	public java.util.List<ItemStack> getDrops(net.minecraft.world.IBlockAccess world, BlockPos pos, IBlockState state,
+			int fortune) {
 		java.util.List<ItemStack> ret = new ArrayList<ItemStack>();
 		ret.add(new ItemStack(getSeed()));
 		int age = getAge(state);
@@ -73,8 +81,7 @@ public class BlockModCrop extends BlockCrops {
 				nbt.setTag("SkullOwner", new NBTTagString(skullName != "" ? skullName : "Notch"));
 				itemstack.setTagCompound(nbt);
 				ret.add(itemstack);
-			}
-			else {
+			} else {
 				ret.add(new ItemStack(getCrop()));
 			}
 		}

@@ -20,12 +20,12 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemModSeed extends Item implements IPlantable{
+public class ItemModSeed extends Item implements IPlantable {
 
 	public final Block crops;
 	public String regname;
 	public final Block soil;
-	
+
 	public ItemModSeed(String name) {
 		regname = name.toLowerCase();
 		Block crops = Block.getBlockFromName("mobfarm:crop" + regname.substring(4));
@@ -37,43 +37,36 @@ public class ItemModSeed extends Item implements IPlantable{
 		this.setCreativeTab(ModRegistry.MOBFARM);
 
 	}
-	
 
-    @Override
-    public IBlockState getPlant(net.minecraft.world.IBlockAccess world, BlockPos pos)
-    {
-        return crops.getDefaultState();
-    }	
-    
-    @Override
-    public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
-    {
-        ItemStack itemstack = player.getHeldItem(hand);
-        net.minecraft.block.state.IBlockState state = worldIn.getBlockState(pos);
-        if (facing == EnumFacing.UP && player.canPlayerEdit(pos.offset(facing), facing, itemstack) && state.getBlock().canSustainPlant(state, worldIn, pos, EnumFacing.UP, this) && worldIn.isAirBlock(pos.up()))
-        {
-            worldIn.setBlockState(pos.up(), this.crops.getDefaultState());
-            itemstack.shrink(1);
-            return EnumActionResult.SUCCESS;
-        }
-        else
-        {
-            return EnumActionResult.FAIL;
-        }
-    }
-	
-    @Override
-    public EnumPlantType getPlantType(IBlockAccess world, BlockPos pos)
-    {
-        return this.crops == Blocks.NETHER_WART ? EnumPlantType.Nether : EnumPlantType.Crop;
-    }
-    
+	@Override
+	public IBlockState getPlant(net.minecraft.world.IBlockAccess world, BlockPos pos) {
+		return crops.getDefaultState();
+	}
+
+	@Override
+	public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand,
+			EnumFacing facing, float hitX, float hitY, float hitZ) {
+		ItemStack itemstack = player.getHeldItem(hand);
+		net.minecraft.block.state.IBlockState state = worldIn.getBlockState(pos);
+		if (facing == EnumFacing.UP && player.canPlayerEdit(pos.offset(facing), facing, itemstack)
+				&& state.getBlock().canSustainPlant(state, worldIn, pos, EnumFacing.UP, this)
+				&& worldIn.isAirBlock(pos.up())) {
+			worldIn.setBlockState(pos.up(), this.crops.getDefaultState());
+			itemstack.shrink(1);
+			return EnumActionResult.SUCCESS;
+		} else {
+			return EnumActionResult.FAIL;
+		}
+	}
+
+	@Override
+	public EnumPlantType getPlantType(IBlockAccess world, BlockPos pos) {
+		return this.crops == Blocks.NETHER_WART ? EnumPlantType.Nether : EnumPlantType.Crop;
+	}
+
 	@SideOnly(Side.CLIENT)
-	public void initModel(){
+	public void initModel() {
 		ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(getRegistryName(), "inventory"));
 	}
 
-	
-	
-	
 }

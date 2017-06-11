@@ -1,21 +1,24 @@
 package shadows.mobfarm;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Random;
 
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
-import net.minecraft.entity.passive.EntityHorse;
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.fml.relauncher.*;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockEntityCrop extends BlockCrops {
 	public Item seed;
@@ -31,11 +34,11 @@ public class BlockEntityCrop extends BlockCrops {
 		setRegistryName(regname);
 		GameRegistry.register(this);
 		GameRegistry.register(new ItemBlock(this), getRegistryName());
-		
+
 		//int endermanEggColor1 = new Color(r, g, b).getRGB(); 
 		//For if I ever try to use the automatic color system.
 	}
-	
+
 	@Override
 	protected Item getSeed() {
 		return Item.getByNameOrId("mobfarm:seed" + regname.substring(4));
@@ -52,8 +55,9 @@ public class BlockEntityCrop extends BlockCrops {
 	}
 
 	@SideOnly(Side.CLIENT)
-	public void initModel(){
-		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName(), "inventory"));
+	public void initModel() {
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0,
+				new ModelResourceLocation(getRegistryName(), "inventory"));
 	}
 
 	@Override
@@ -66,7 +70,7 @@ public class BlockEntityCrop extends BlockCrops {
 		if (age >= getMaxAge()) {
 			Entity entity = EntityList.createEntityByIDFromName(crop, world);
 			Util.spawnCreature(world, entity, pos.getX(), pos.getY(), pos.getZ());
-			
+
 		}
 
 		return ret;
