@@ -16,7 +16,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -32,11 +31,8 @@ public class BlockEntityCrop extends BlockCrops {
 		crop = new ResourceLocation(name.substring(4));
 		setUnlocalizedName(MobFarm.MODID + "." + regname);
 		setRegistryName(regname);
-		GameRegistry.register(this);
-		GameRegistry.register(new ItemBlock(this), getRegistryName());
-
-		//int endermanEggColor1 = new Color(r, g, b).getRGB(); 
-		//For if I ever try to use the automatic color system.
+		DataLists.BLOCKS.add(this);
+		DataLists.ITEMS.add(new ItemBlock(this).setRegistryName(getRegistryName()));
 	}
 
 	@Override

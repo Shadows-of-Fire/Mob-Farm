@@ -15,7 +15,6 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -31,8 +30,8 @@ public class BlockCommandCrop extends BlockCrops {
 		crop = command;
 		setUnlocalizedName(MobFarm.MODID + "." + regname);
 		setRegistryName(regname);
-		GameRegistry.register(this);
-		GameRegistry.register(new ItemBlock(this), getRegistryName());
+		DataLists.BLOCKS.add(this);
+		DataLists.ITEMS.add(new ItemBlock(this).setRegistryName(getRegistryName()));
 
 	}
 

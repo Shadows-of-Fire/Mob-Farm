@@ -16,7 +16,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IPlantable;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -33,9 +32,8 @@ public class ItemModSeed extends Item implements IPlantable {
 		this.soil = Blocks.FARMLAND;
 		setUnlocalizedName(MobFarm.MODID + "." + regname);
 		setRegistryName(regname);
-		GameRegistry.register(this);
-		this.setCreativeTab(ModRegistry.MOBFARM);
-
+		setCreativeTab(ModRegistry.MOBFARM);
+		DataLists.ITEMS.add(this);
 	}
 
 	@Override

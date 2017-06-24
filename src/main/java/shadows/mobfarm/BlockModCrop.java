@@ -16,7 +16,6 @@ import net.minecraft.nbt.NBTTagString;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -31,8 +30,8 @@ public class BlockModCrop extends BlockCrops {
 		crop = cropIn;
 		setUnlocalizedName(MobFarm.MODID + "." + regname);
 		setRegistryName(regname);
-		GameRegistry.register(this);
-		GameRegistry.register(new ItemBlock(this), getRegistryName());
+		DataLists.BLOCKS.add(this);
+		DataLists.ITEMS.add(new ItemBlock(this).setRegistryName(getRegistryName()));
 
 	}
 
@@ -41,14 +40,14 @@ public class BlockModCrop extends BlockCrops {
 		crop = cropIn;
 		setUnlocalizedName(MobFarm.MODID + "." + regname);
 		setRegistryName(regname);
-		GameRegistry.register(this);
-		GameRegistry.register(new ItemBlock(this), getRegistryName());
+		DataLists.BLOCKS.add(this);
+		DataLists.ITEMS.add(new ItemBlock(this).setRegistryName(getRegistryName()));
 		this.skullName = skullName;
 	}
 
 	@Override
 	protected Item getSeed() {
-		return Item.getByNameOrId("cancerplants:seed" + regname.substring(4));
+		return Item.getByNameOrId("mobfarm:seed" + regname.substring(4));
 	}
 
 	@Override

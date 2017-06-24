@@ -1,5 +1,6 @@
 package shadows.mobfarm;
 
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -10,11 +11,9 @@ public class CommonProxy {
 	public static Configuration config;
 
 	public void preInit(FMLPreInitializationEvent e) {
-		// Initialization of blocks and items typically goes here:
 		config = new Configuration(e.getSuggestedConfigurationFile());
 		ConfigFile.syncConfig();
-		ModRegistry.init();
-		RecipeManager.initRecipes();
+		MinecraftForge.EVENT_BUS.register(new ModRegistry());
 	}
 
 	public void init(FMLInitializationEvent e) {
