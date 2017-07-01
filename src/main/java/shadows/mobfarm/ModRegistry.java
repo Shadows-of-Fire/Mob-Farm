@@ -87,14 +87,14 @@ public class ModRegistry {
 		public ItemStack getTabIconItem() {
 			return new ItemStack(seedEnderDragon);
 		}
-		
-	    @Override
-	    public void displayAllRelevantItems(NonNullList<ItemStack> list)
-	    {
-	    	for(Item item : DataLists.ITEMS){
-	    		if(item instanceof ItemModSeed) list.add(new ItemStack(item));
-	    	}
-	    }
+
+		@Override
+		public void displayAllRelevantItems(NonNullList<ItemStack> list) {
+			for (Item item : DataLists.ITEMS) {
+				if (item instanceof ItemModSeed)
+					list.add(new ItemStack(item));
+			}
+		}
 	};
 
 	@SideOnly(Side.CLIENT)
