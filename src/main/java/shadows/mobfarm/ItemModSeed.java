@@ -10,25 +10,26 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IPlantable;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemModSeed extends Item implements IPlantable {
 
-	public final Block crops;
+	public final ResourceLocation crops;
 	public String regname;
 	public final Block soil;
 
 	public ItemModSeed(String name) {
 		regname = name.toLowerCase();
-		Block crops = Block.getBlockFromName("mobfarm:crop" + regname.substring(4));
-		this.crops = crops;
+		crops = new ResourceLocation("mobfarm:crop" + regname.substring(4));
 		this.soil = Blocks.FARMLAND;
 		setUnlocalizedName(MobFarm.MODID + "." + regname);
 		setRegistryName(regname);
@@ -38,7 +39,7 @@ public class ItemModSeed extends Item implements IPlantable {
 
 	@Override
 	public IBlockState getPlant(net.minecraft.world.IBlockAccess world, BlockPos pos) {
-		return crops.getDefaultState();
+		return ForgeRegistries.BLOCKS.getValue(crops).getDefaultState();
 	}
 
 	@Override
@@ -49,7 +50,7 @@ public class ItemModSeed extends Item implements IPlantable {
 		if (facing == EnumFacing.UP && player.canPlayerEdit(pos.offset(facing), facing, itemstack)
 				&& state.getBlock().canSustainPlant(state, worldIn, pos, EnumFacing.UP, this)
 				&& worldIn.isAirBlock(pos.up())) {
-			worldIn.setBlockState(pos.up(), this.crops.getDefaultState());
+			worldIn.setBlockState(pos.up(), ForgeRegistries.BLOCKS.getValue(crops).getDefaultState());
 			itemstack.shrink(1);
 			return EnumActionResult.SUCCESS;
 		} else {
@@ -59,7 +60,7 @@ public class ItemModSeed extends Item implements IPlantable {
 
 	@Override
 	public EnumPlantType getPlantType(IBlockAccess world, BlockPos pos) {
-		return this.crops == Blocks.NETHER_WART ? EnumPlantType.Nether : EnumPlantType.Crop;
+		return EnumPlantType.Crop;
 	}
 
 	@SideOnly(Side.CLIENT)

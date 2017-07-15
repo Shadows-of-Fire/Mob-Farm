@@ -10,7 +10,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 
 
-version = "1.12-2.1.0"
+version = "1.12-2.2.1"
 archivesBaseName = "Mob Farm"
 
 sourceCompatibility = targetCompatibility = "1.8" // Need this here so eclipse task generates correctly.
@@ -19,10 +19,11 @@ compileJava {
 }
 
 minecraft {
-    version = "1.12-14.21.1.2387"
+    version = "1.12-14.21.1.2413"
     runDir = "run"
-    mappings = "snapshot_20170630"
+    mappings = "snapshot_20170706"
 }
+
 
 repositories {
     maven {
