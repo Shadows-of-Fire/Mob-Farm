@@ -10,7 +10,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 
 
-version = "1.12-2.2.1"
+version = "1.12-2.2.2"
 archivesBaseName = "Mob Farm"
 
 sourceCompatibility = targetCompatibility = "1.8" // Need this here so eclipse task generates correctly.
@@ -19,9 +19,9 @@ compileJava {
 }
 
 minecraft {
-    version = "1.12-14.21.1.2413"
+    version = "1.12.2-14.23.1.2599"
     runDir = "run"
-    mappings = "snapshot_20170706"
+    mappings = "snapshot_20180119"
 }
 
 
@@ -29,23 +29,14 @@ repositories {
     maven {
         url "http://dvs1.progwml6.com/files/maven"
     }
-    maven {
-        url "http://maven.epoxide.xyz"
-    }
-    maven {
-        url "http://maven.amadornes.com/"
-    }
 	maven {
 		url  "http://tehnut.info/maven"
 	}
 }
 
 dependencies {
-    compile files('libs/')
-	deobfCompile "mezz.jei:jei_1.12:4.7.0.68:api"
-    runtime "mezz.jei:jei_1.12:4.7.0.68"
-	deobfCompile "mcp.mobius.waila:Hwyla:1.8.18-B32_1.12:api"
-	runtime "mcp.mobius.waila:Hwyla:1.8.18-B32_1.12"
+	deobfCompile "mezz.jei:jei_1.12.2:+"
+	deobfCompile "mcp.mobius.waila:Hwyla:+"
 }
 
 

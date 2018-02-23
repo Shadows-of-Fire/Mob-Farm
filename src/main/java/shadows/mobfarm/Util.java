@@ -34,8 +34,7 @@ public class Util {
 				entity.setLocationAndAngles(x, y, z, MathHelper.wrapDegrees(world.rand.nextFloat() * 360.0F), 0.0F);
 				entityliving.rotationYawHead = entityliving.rotationYaw;
 				entityliving.renderYawOffset = entityliving.rotationYaw;
-				entityliving.onInitialSpawn(world.getDifficultyForLocation(new BlockPos(entityliving)),
-						(IEntityLivingData) null);
+				entityliving.onInitialSpawn(world.getDifficultyForLocation(new BlockPos(entityliving)), (IEntityLivingData) null);
 				world.spawnEntity(entity);
 				entityliving.playLivingSound();
 

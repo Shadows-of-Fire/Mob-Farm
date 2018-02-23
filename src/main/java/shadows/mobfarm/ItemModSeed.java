@@ -43,13 +43,10 @@ public class ItemModSeed extends Item implements IPlantable {
 	}
 
 	@Override
-	public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand,
-			EnumFacing facing, float hitX, float hitY, float hitZ) {
+	public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 		ItemStack itemstack = player.getHeldItem(hand);
 		net.minecraft.block.state.IBlockState state = worldIn.getBlockState(pos);
-		if (facing == EnumFacing.UP && player.canPlayerEdit(pos.offset(facing), facing, itemstack)
-				&& state.getBlock().canSustainPlant(state, worldIn, pos, EnumFacing.UP, this)
-				&& worldIn.isAirBlock(pos.up())) {
+		if (facing == EnumFacing.UP && player.canPlayerEdit(pos.offset(facing), facing, itemstack) && state.getBlock().canSustainPlant(state, worldIn, pos, EnumFacing.UP, this) && worldIn.isAirBlock(pos.up())) {
 			worldIn.setBlockState(pos.up(), ForgeRegistries.BLOCKS.getValue(crops).getDefaultState());
 			itemstack.shrink(1);
 			return EnumActionResult.SUCCESS;

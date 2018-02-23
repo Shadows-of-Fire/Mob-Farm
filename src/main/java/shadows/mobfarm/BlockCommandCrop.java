@@ -1,6 +1,5 @@
 package shadows.mobfarm;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 import net.minecraft.block.BlockCrops;
@@ -12,7 +11,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
@@ -70,21 +71,16 @@ public class BlockCommandCrop extends BlockCrops {
 
 	@SideOnly(Side.CLIENT)
 	public void initModel() {
-		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0,
-				new ModelResourceLocation(regname, "inventory"));
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(regname, "inventory"));
 	}
 
 	@Override
-	public java.util.List<ItemStack> getDrops(net.minecraft.world.IBlockAccess world, BlockPos pos, IBlockState state,
-			int fortune) {
-		java.util.List<ItemStack> ret = new ArrayList<ItemStack>();
+	public void getDrops(NonNullList<ItemStack> ret, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
 		ret.add(new ItemStack(getSeed()));
 		int age = getAge(state);
 
 		if (age >= getMaxAge()) {
 
 		}
-
-		return ret;
 	}
 }
